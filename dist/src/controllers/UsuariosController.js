@@ -42,7 +42,7 @@ class UsuariosController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            if (req.body.senha.length > 0) {
+            if (req.body.senha.length) {
                 req.body.senha = md5_typescript_1.Md5.init(req.body.senha);
             }
             let response = yield UserModel_1.UserModel.update(req.body, { where: { id: id } });

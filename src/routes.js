@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+exports.router = void 0;
+var express_1 = require("express");
+var UsuariosController_1 = require("./controllers/UsuariosController");
+var router = express_1["default"].Router();
+exports.router = router;
+router.post("/usuarios", UsuariosController_1["default"].create);
+router.get("/usuarios", UsuariosController_1["default"].findAll);
+router.get("/usuarios/:id", UsuariosController_1["default"].findOne);
+router.put("/usuarios/:id", UsuariosController_1["default"].update);
+router["delete"]("/usuarios/:id", UsuariosController_1["default"].destroy);

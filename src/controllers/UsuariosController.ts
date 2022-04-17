@@ -31,7 +31,7 @@ class UsuariosController {
 
     async update(req: Request, res: Response) {
         const {id} = req.params;
-        if(req.body.senha.length > 0){
+        if(req.body.senha.length){
             req.body.senha = Md5.init(req.body.senha);
         }
         let response = await UserModel.update(req.body, {where:{ id: id}})
